@@ -94,25 +94,26 @@ const RestaurantProfile = () => {
   const { id } = useParams();
   const restaurant = restaurantData[id];
 
-  if (!restaurant) {
-    return <div>Restaurant not found</div>;
-  }
-
   return (
     <ProfileContainer>
       <HeaderContainer>
-        <HeaderLink href="/">Restaurantes</HeaderLink>
         <Link to="/">
           <Logo src={logo} alt="Logo" />
         </Link>
-        <CartInfo>0 produto(s) no carrinho</CartInfo>
+        <HeaderLink href="/">Início</HeaderLink>
+        <HeaderLink href="/cart">
+          <CartInfo>Carrinho (0)</CartInfo>
+        </HeaderLink>
       </HeaderContainer>
       <ProfileBanner>
-        <img src={restaurant.image} alt={restaurant.name} />
-        <div className="overlay"></div> {/* Esta é a camada com a transparência */}
+        <img src={restaurant.image} alt={`${restaurant.name} Banner`} />
+        <div className="overlay"></div>
         <CuisineType>{restaurant.cuisine}</CuisineType>
         <RestaurantName>{restaurant.name}</RestaurantName>
       </ProfileBanner>
+      <RestaurantInfo>
+        <h2>Nosso Cardápio</h2>
+      </RestaurantInfo>
       <Menu>
         {restaurant.menu.map((item, index) => (
           <MenuItem key={index}>
@@ -126,6 +127,7 @@ const RestaurantProfile = () => {
           </MenuItem>
         ))}
       </Menu>
+      <Footer />
     </ProfileContainer>
   );
 };
