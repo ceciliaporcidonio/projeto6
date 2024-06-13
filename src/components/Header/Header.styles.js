@@ -7,12 +7,6 @@ export const HeaderContainer = styled.header`
   align-items: center;
   padding: 20px;
   background-color: #FFF8F2;
-
-  @media (max-width: 768px) {
-  flex-direction: column;
-  text-align: center;
-  padding: 30px 10px;
-  }
 `;
 
 

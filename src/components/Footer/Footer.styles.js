@@ -52,8 +52,4 @@ export const FooterText = styled.p`
   line-height: 9.72px;
   text-align: center;
   margin: 20px;
-  
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
 `;
