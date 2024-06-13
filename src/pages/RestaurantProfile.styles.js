@@ -6,7 +6,9 @@ export const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 180vh;
+  min-height: 150vh;
+  overflow: hidden;
+  background-color: #FFF8F2;
 `;
 
 export const HeaderContainer = styled.div`
@@ -24,13 +26,10 @@ export const HeaderContainer = styled.div`
 
 export const HeaderLink = styled.a`
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 18px;
   color: #e66767;
-  font-weight: bold;
-  font-family: 'Arial', sans-serif; 
-  &:hover {
-    text-decoration: underline;
-  }
+  font-weight: 900;
+  font-family: 'roboto', sans-serif; 
 `;
 
 export const Logo = styled.img`
@@ -39,10 +38,10 @@ export const Logo = styled.img`
 `;
 
 export const CartInfo = styled.div`
-  font-size: 1.2rem;
-  font-family: 'Arial', sans-serif; 
-  font-weight: bold;
+  font-size: 18px;
   color: #e66767;
+  font-weight: 900;
+  font-family: 'roboto', sans-serif; 
 `;
 
 export const ProfileBanner = styled.div`
@@ -58,8 +57,10 @@ export const ProfileBanner = styled.div`
 
   .overlay {
     position: absolute;
-    top: 0;
     left: 0;
+    width: 100%;
+    height: 300px;
+    top: 0px;
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.2); /* Camada escura e transparente */
@@ -71,13 +72,28 @@ export const ProfileBanner = styled.div`
   }
 `;
 
+export const CuisineType = styled.h2`
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  padding: 10px;
+  font-size: 32px;
+  color: #fff;
+  font-weight: 100;
+  font-family: 'roboto', sans-serif;
+  z-index: 2; /* Certifique-se de que o z-index é maior que a camada de transparência */
+  text-align: left;
+`;
+
 export const RestaurantName = styled.h1`
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 100px;
   padding: 10px;
-  font-size: 2.5rem;
-  font-family: 'Arial', sans-serif;
+  font-size: 32px;
+  color: #fff;
+  font-weight: 900;
+  font-family: 'roboto', sans-serif;
   z-index: 2; /* Certifique-se de que o z-index é maior que a camada de transparência */
 `;
 
@@ -94,18 +110,21 @@ export const RestaurantInfo = styled.div`
 export const Menu = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 20px;
-  font-family: 'Arial', sans-serif;
+  gap: 30px;
+  margin-top: 90px;
+  margin-bottom: 70px;
+  font-family: 'roboto', sans-serif;
   background-color: #FFF8F2;
 `;
 
 export const MenuItem = styled.div`
   background-color: #e66767;
-  border: 10px solid #e66767;
-  border-radius: 2px;
+  border: 2px solid #e66767;
+  border-radius: 1px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 420px;
+  height: 360px;
 
   img {
     width: 100%;
@@ -114,38 +133,42 @@ export const MenuItem = styled.div`
   }
 
   div {
-    padding: 15px;
+    padding: 5px;
     text-align: left;
 
     h3 {
-      font-size: 1.25rem;
+      font-weight: 900;
+      font-family: 'roboto', sans-serif;
+      font-size: 16px;
       margin-bottom: 10px;
-      color: #fff8f2;
+      color: #ffebd9;
     }
 
     p {
-      font-size: 1rem;
-      color: #fff8f2;
+      font-size: 14px;
+      color: #ffebd9;
+      font-family: 'roboto', sans-serif;
+      font-weight: 400;
     }
 
     span {
-      font-size: 1.2rem;
-      color: #fff8f2;
+      font-size: 14px;
+      color: #ffebd9;
       font-weight: bold;
       display: block;
       margin: 10px 0;
     }
 
     button {
-      padding: 10px 130px;
-      background-color: #fff8f2;
+      padding: 8px 120px;
+      background-color: #ffebd9;
       color: #e66767;
       border: none;
-      border-radius: 5px;
+      border-radius: 3px;
       cursor: pointer;
       transition: background-color 0.3s;
-      font-weight: bold;
-      font-size: 14px;
+      font-weight: 700;
+      font-size: 16px;
 
       &:hover {
         background-color: #fff8e3;

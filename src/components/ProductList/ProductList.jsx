@@ -7,7 +7,7 @@ import sushiImage from '../../images/image1.png';
 import italiaImage from '../../images/image2.png';
 import burgerImage from '../../images/image3.png';
 import pizzaImage from '../../images/image4.png';
-import { ProductGrid } from './ProductList.styles'; // Importação correta
+import { ProductGrid } from './ProductList.styles';
 
 const StyledLink = styled(Link)`
   text-decoration: none;  /* Remove o sublinhado dos links */
@@ -19,7 +19,7 @@ const products = [
     id: 1,
     image: sushiImage,
     title: 'Sushi Comida crua',
-    description: 'Ingredientes frescos e um buffet com a maior variedade da culinária oriental.',
+    description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     rating: 4.5,
     tags: ['Japonês'],
     price: 'R$ 10,00',
@@ -29,7 +29,7 @@ const products = [
     id: 2,
     image: italiaImage,
     title: 'La Dolce Vita Trattoria',
-    description: 'A La Dolce Vita Trattoria é conhecida por seus autênticos sabores italianos...',
+    description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     rating: 4.6,
     tags: ['Italiana'],
     price: 'R$ 25,00',
@@ -39,7 +39,7 @@ const products = [
     id: 3,
     image: burgerImage,
     title: 'Hambugão da Esquina',
-    description: 'Hamburguer de 150g, pão brioche, queijo cheddar, maionese, alface americana...',
+    description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     rating: 4.4,
     tags: ['Americana'],
     price: 'R$ 8,00',
@@ -49,7 +49,7 @@ const products = [
     id: 4,
     image: italiaImage,
     title: 'La Dolce Vita Trattoria',
-    description: 'A La Dolce Vita Trattoria é conhecida por seus autênticos sabores italianos...',
+    description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já! La Dolce Vita Trattoria é conhecida por seus autênticos sabores italianos...',
     rating: 4.6,
     tags: ['Italiana'],
     price: 'R$ 25,00',
@@ -59,7 +59,7 @@ const products = [
     id: 5,
     image: pizzaImage,
     title: 'Pizzaria Forno Mágico',
-    description: 'Pizza gigante com borda personalizada e mais de 30 sabores...',
+    description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     rating: 4.6,
     tags: ['Italiana'],
     price: 'R$ 12,00',
@@ -69,7 +69,7 @@ const products = [
     id: 6,
     image: italiaImage,
     title: 'La Dolce Vita Trattoria',
-    description: 'A La Dolce Vita Trattoria é conhecida por seus autênticos sabores italianos...',
+    description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     rating: 4.6,
     tags: ['Italiana'],
     price: 'R$ 25,00',

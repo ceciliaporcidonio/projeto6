@@ -3,17 +3,19 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   position: relative;
-  border: 5px solid #E66767;
+  border: 1px solid #E66767;
   border-radius: 2px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin: 20px;
-  width: 472px; 
+  width: 100%; 
+  max-width: 472px;
   height: 398px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s;
+  font-family: 'Roboto', sans-serif;
 
   &:hover {
     transform: translateY(-10px);
@@ -33,7 +35,7 @@ export const Image = styled.img`
 `;
 
 export const Content = styled.div`
-  padding: 10px;
+  padding: 5px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -43,53 +45,56 @@ export const TitleRatingContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #e66767;
 `;
 
 export const Title = styled.h2`
-  font-size: 1.4rem;
+  font-size: 18px;
   margin-bottom: 10px;
   color: #E66767;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
 `;
 
 export const Rating = styled.div`
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
-  color: #f39c12;
-  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #e66767
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 `;
 
 export const Price = styled.p`
-  font-size: 1.2rem;
+  font-size: 16px;
   color: #E66767;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
-  margin-bottom: 10px;
 `;
 
 export const Description = styled.p`
-  font-size: 1rem;
+  font-size: 14px;
   color: #E66767;
-  font-family: 'Arial', sans-serif;
-  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
   flex: 1;
+  text-align: left;
 `;
 
 export const Button = styled.button`
-  background-color: #ff6347;
-  color: white;
+  background-color: #e66767;
+  color: #FFEBD9;
   border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
+  border-radius: 2px;
+  padding: 6px 6px;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: 'roboto', sans-serif;
+  align-self: baseline;
+
   &:hover {
-    background-color: #ff4500;
+    background-color: #ff6347;
   }
-  font-family: 'Arial', sans-serif;
-  align-self: center;
 `;
 
 export const TagsContainer = styled.div`
@@ -99,4 +104,7 @@ export const TagsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  font-size: 12px;
+  font-family: 'roboto', sans-serif;
+  font-weight: 700;
 `;

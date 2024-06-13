@@ -14,8 +14,7 @@ const Footer = () => (
       <SocialIcon src={twitterIcon} alt="Twitter" />
     </SocialIcons>
     <FooterText>
-      A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade dos produtos é toda do estabelecimento contratado.
-    </FooterText>
+    A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade dos produtos é toda do estabelecimento contratado.     </FooterText>
   </FooterContainer>
 );
 

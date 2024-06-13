@@ -1,7 +1,7 @@
 // src/pages/RestaurantProfile.jsx
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ProfileBanner, ProfileContainer, RestaurantInfo, RestaurantName, Menu, MenuItem, Logo, HeaderContainer, HeaderLink, CartInfo } from './RestaurantProfile.styles';
+import { ProfileBanner, ProfileContainer, RestaurantInfo, RestaurantName, Menu, MenuItem, Logo, HeaderContainer, HeaderLink, CartInfo, CuisineType } from './RestaurantProfile.styles';
 import logo from '../images/logo.png';
 import sushiImage from '../images/image1.png';
 import italiaImage from '../images/image2.png';
@@ -110,6 +110,7 @@ const RestaurantProfile = () => {
       <ProfileBanner>
         <img src={restaurant.image} alt={restaurant.name} />
         <div className="overlay"></div> {/* Esta é a camada com a transparência */}
+        <CuisineType>{restaurant.cuisine}</CuisineType>
         <RestaurantName>{restaurant.name}</RestaurantName>
       </ProfileBanner>
       <Menu>

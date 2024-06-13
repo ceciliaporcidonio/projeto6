@@ -3,35 +3,42 @@ import styled from 'styled-components';
 
 export const BannerContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 300px;
-  background-image: url(${props => props.src});
+  background-image: url(${props => props.src || 'fallback-image.jpg'});
   background-size: cover;
   background-position: center;
+  width: 100%;
+  height: 400px;
+  top: 0px;
+  background-color: #FFF8F2;
+
 `;
 
 export const BannerImage = styled.img`
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 384px;
+  top: -24px;
 `;
 
 export const BannerText = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   color: #E66767;
-  font-size: 24px;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 42.19px;
+  width: 700px;
+  height: 84px;
+  top: 50%;
+  left: 50%;
   text-align: center;
-  font-family: 'Arial', sans-serif; 
 `;
 
 export const Logo = styled.img`
   position: absolute;
-  top: 20%;
+  height: 57.5px;
+  top: 40px;
   left: 50%;
-  width: 110px;
-  height: auto;
+  transform: translateX(-50%);
+  width: 125px;
 `;
