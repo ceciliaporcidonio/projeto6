@@ -5,6 +5,8 @@ export const FooterContainer = styled.footer`
   text-align: center;
   padding: 20px;
   color: #E66767;
+  width: 1860px;
+  height: 250px;
 `;
 
 export const FooterLogo = styled.img`

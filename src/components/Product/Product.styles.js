@@ -51,7 +51,7 @@ export const TitleRatingContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 22px;
+  font-size: 26px;
   margin-bottom: 10px;
   color: #E66767;
   font-family: 'Roboto', sans-serif;
@@ -61,21 +61,21 @@ export const Title = styled.h2`
 export const Rating = styled.div`
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 20px;
   color: #e66767
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
 `;
 
 export const Price = styled.p`
-  font-size: 16px;
+  font-size: 20px;
   color: #E66767;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
 `;
 
 export const Description = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   color: #E66767;
   font-family: 'Roboto', sans-serif;
   flex: 1;
