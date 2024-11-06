@@ -4,8 +4,9 @@ export const TagContainer = styled.span`
   display: inline-block;
   background-color: #e66767;
   color: #FFEBD9;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
+  padding: 3px 8px;
+  font-size: 12px;
   font-family: 'Roboto', sans-serif; 
+  height: 26px;
+  line-height: 25px;
 `;

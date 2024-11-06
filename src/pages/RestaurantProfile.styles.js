@@ -6,46 +6,55 @@ export const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 120vh;
+  height: 1624px
   overflow: hidden;
   background-color: #FFF8F2;
   width: 100%;
-  max-width: 1900px;
+  max-width: 1366px;
   margin: auto;
 `;
 
 export const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  padding: 50px 20px;
+  padding: 0 171px;
   background-image: url(${bannerImage});
   background-size: cover;
   background-position: center;
   background-color: #fff8f2;
   color: #fff;
+  height: 186px;
 `;
 
 export const HeaderLink = styled.a`
   text-decoration: none;
   font-size: 18px;
+  line-height: 21,09px;
   color: #e66767;
   font-weight: 900;
   font-family: 'roboto', sans-serif; 
+  text-align: justify;
 `;
 
 export const Logo = styled.img`
-  height: 60px;
-  width: auto;
+  height: 57,5px;
+  width: 125px;
+  top: 40px;
+  display: block;
+  margin: auto;
+  position: absolute;
+
 `;
 
 export const CartInfo = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   color: #e66767;
   font-weight: 900;
   font-family: 'roboto', sans-serif; 
-`;
+  line-height: 21,09px;
+  `;
 
 export const ProfileBanner = styled.div`
   width: 100%;
@@ -63,7 +72,7 @@ export const ProfileBanner = styled.div`
     left: 0;
     width: 100%;
     height: 300px;
-    top: 0px;
+    top: 0;
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.2); /* Camada escura e transparente */
@@ -77,11 +86,12 @@ export const ProfileBanner = styled.div`
 
 export const CuisineType = styled.h2`
   position: absolute;
-  top: 20px;
-  left: 100px;
-  padding: 10px;
+  top: 30px;
+  left: 171px;
+  padding: 0px;
   font-size: 32px;
-  color: #fff;
+  line-height: 37,5px
+  color: #ffffff;
   font-weight: 100;
   font-family: 'roboto', sans-serif;
   z-index: 2; /* Certifique-se de que o z-index é maior que a camada de transparência */
@@ -91,7 +101,7 @@ export const CuisineType = styled.h2`
 export const RestaurantName = styled.h1`
   position: absolute;
   bottom: 20px;
-  left: 100px;
+  left: 171px;
   padding: 10px;
   font-size: 32px;
   color: #fff;
@@ -111,6 +121,8 @@ export const RestaurantInfo = styled.div`
 `;
 
 export const Menu = styled.div`
+  width: 100%; 
+  max-width: 1024px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -126,13 +138,12 @@ export const MenuItem = styled.div`
   border-radius: 1px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 500px;
-  height: 520px;
+  width: 320px;
+  height: 338px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 6px;
 
 
   img {
@@ -142,9 +153,8 @@ export const MenuItem = styled.div`
   }
 
   div {
-    padding: 5px;
     text-align: left;
-    flex:1;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -152,8 +162,10 @@ export const MenuItem = styled.div`
     h3 {
       font-weight: 900;
       font-family: 'roboto', sans-serif;
-      font-size: 22px;
-      margin-bottom: 10px;
+      font-size: 16px;
+      margin: 5px;
+      margin-bottom: 5px;
+      line-height: 18,75px;
       color: #ffebd9;
       white-space: nowrap;
     overflow: hidden;
@@ -161,11 +173,14 @@ export const MenuItem = styled.div`
   }
 
     p {
-      font-size: 18px;
+      font-size: 14px;
       color: #ffebd9;
       font-family: 'roboto', sans-serif;
       font-weight: 400;
       overflow: hidden;
+      margin: 5px;
+      line-height: 22px;
+
     text-overflow: ellipsis; /* Truncamento da descrição */
     display: -webkit-box;
     -webkit-line-clamp: 3; /* Número de linhas antes do truncamento */
@@ -173,30 +188,27 @@ export const MenuItem = styled.div`
     }
 
     span {
-      font-size: 18px;
       color: #ffebd9;
       font-weight: bold;
       margin: 10px 0;
     }
 
     button {
-      width: 100%;
-      display:flex;
-      width: 100%;
+      width: 304px;
+      height: 24px;
       align-items: center;
-      justify-content: center;
-      padding: 8px 202px;
       background-color: #ffebd9;
       color: #e66767;
       border: none;
-      border-radius: 3px;
       cursor: pointer;
       transition: background-color 0.3s;
       font-weight: 700;
-      font-size: 20px;
+      font-size: 14px;
       margin-top: auto;
-      height: 40px; /* Define altura fixa */
       bottom: 10px; /* Define o botão na parte inferior do card */
+      line-height: 16,41px;
+      text-align: center;
+
 
       &:hover {
         background-color: #fff8e3;
@@ -227,42 +239,41 @@ width: 1000px;
   padding: 30px;
   gap: 20px;
   align-items: flex-start;
-  border-radius: 10px;
   position: relative; /* Permite que elementos internos usem position absoluta */
 `;
 
 // Título do prato no modal
 export const Title = styled.h2`
-  font-size: 24px;
-  font-weight: 800;
-  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 900;
+  color: #FFEBD9;
   margin: 0;
   font-family: 'roboto', sans-serif;
-  margin-bottom: 35px;
 `;
 
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  color: #FFFFFF;
+  color: #FFEBD9;
+  line-height: 22px;
   width: 100%;
   
 
 
       span {
-      font-size: 20px;
+      font-size: 14px;
       color: #FFFFFF;
       font-family: 'roboto', sans-serif;
       align-self: flex-start; /* Alinhamento ao início */
-      margin-bottom: 35px;
       }
 `;
 
 // Descrição do prato
 export const Description = styled.p`
-  font-size: 20px;
-  color: #FFFFFF;
+  font-size: 14px;
+  color: #FFEBD9;
+  line-height: 22px;
   font-family: 'roboto', sans-serif;
   margin-bottom: 15px;
   display: block;
@@ -272,11 +283,10 @@ export const Description = styled.p`
 
 // Imagem do prato
 export const DishImage = styled.img`
-  width: 280px;
-  height: 280px;
+  width: 304px;
+  height: 167px;
   object-fit: cover;
-  border-radius: 10px;
-`;
+  `;
 
 // Botão de fechar
 export const CloseButton = styled.button`

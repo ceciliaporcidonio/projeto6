@@ -9,8 +9,7 @@ import {
   Rating,
   Description,
   Button,
-  TagsContainer,
-  Price
+  TagsContainer
 } from './Product.styles';
 import Tag from '../Tag/Tag.tsx';
 
@@ -27,7 +26,6 @@ const Product = ({ image, title, description, rating, tags, price }) => (
         <Title>{title}</Title>
         <Rating>{rating} <span>⭐</span></Rating>
       </TitleRatingContainer>
-      <Price>{price}</Price>
       <Description>{description}</Description>
       <Button>Saiba mais</Button>
     </Content>

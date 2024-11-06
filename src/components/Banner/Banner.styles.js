@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const BannerContainer = styled.div`
   position: relative;
   background-color: #FFF8F2;
-  width: 1860px;
-  height: 400px;
+  width: 2031,81px;
+  height: 384px;
 `;
 
 export const BannerImage = styled.img`
@@ -21,9 +21,14 @@ export const BannerText = styled.div`
   font-family: 'Roboto', sans-serif;
   font-size: 36px;
   font-weight: 900;
-  width: 700px;
+  width: 1539px;
   height: 84px;
-  top: 50%;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 42.19px;
+  text-align: center;
+
+  top: 75%;
   left: 50%;
   text-align: center;
 `;

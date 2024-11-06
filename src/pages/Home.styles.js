@@ -2,13 +2,12 @@
 import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
-  width: 1860px;
-  height: 2120px;
-  top: -149px;
-  left: -228px;
-  gap: 0px;
+  width: 100%;
+  max-width: 1366px;
+  height: 1848px;
   background-color: #FFF8F2;
-  opacity: 1; /* Certifique-se de que o container está visível */
+  opacity: 1;
   margin: 0 auto;
-  padding: 20px; /* Ajuste de espaçamento interno opcional */
+  padding: 10px;
+  overflow-x: hidden
 `;

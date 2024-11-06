@@ -6,7 +6,7 @@ import sushiImage from '../../images/image1.png';
 import italiaImage from '../../images/image2.png';
 import burgerImage from '../../images/image3.png';
 import pizzaImage from '../../images/image4.png';
-import { RestauranteCard1, RestauranteCard2, RestauranteCard3, RestauranteCard4, RestauranteCard5, RestauranteCard6, ProductGrid } from './ProductList.styles';
+import { RestauranteCard, ProductGrid } from './ProductList.styles';
 
 const products = [
   {
@@ -18,7 +18,7 @@ const products = [
     tags: ['Japonês', 'Destaque da semana'],
     price: 'R$ 10,00',
     category: 'Japonês',
-    component: RestauranteCard1
+    component: RestauranteCard
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const products = [
     tags: ['Italiana'],
     price: 'R$ 25,00',
     category: 'Italiana',
-    component: RestauranteCard2
+    component: RestauranteCard
   },
   {
     id: 3,
@@ -37,10 +37,10 @@ const products = [
     title: 'Hambugão da Esquina',
     description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     rating: 4.4,
-    tags: ['Americana'],
+    tags: ['Hambúrguer'],
     price: 'R$ 8,00',
     category: 'Americana',
-    component: RestauranteCard3
+    component: RestauranteCard
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ const products = [
     tags: ['Italiana'],
     price: 'R$ 28,00',
     category: 'Italiana',
-    component: RestauranteCard4
+    component: RestauranteCard
   },
   {
     id: 5,
@@ -59,10 +59,10 @@ const products = [
     title: 'Pizzaria Forno Mágico',
     description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     rating: 4.6,
-    tags: ['Italiana'],
+    tags: ['Pizza'],
     price: 'R$ 12,00',
     category: 'Italiana',
-    component: RestauranteCard5
+    component: RestauranteCard
   },
   {
     id: 6,
@@ -73,14 +73,14 @@ const products = [
     tags: ['Italiana'],
     price: 'R$ 27,00',
     category: 'Italiana',
-    component: RestauranteCard6
+    component: RestauranteCard
   }
 ];
 
 const ProductList = () => (
   <ProductGrid>
     {products.map(({ id, component: Component, ...product }) => (
-      <Link to={`/restaurant/${id}`} key={id} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Link to={`/restaurant/${id}`} key={id} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
         <Component>
           <Product {...product} />
         </Component>

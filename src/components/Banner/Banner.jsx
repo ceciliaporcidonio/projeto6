@@ -6,7 +6,7 @@ import logo from '../../images/logo.png';
 const Banner = () => (
   <BannerContainer>
     <BannerImage src={bannerImage} alt="Banner" />
-    <BannerText>Viva experiências gastronômicas no conforto da sua casa</BannerText>
+    <BannerText>Viva experiências gastronômicas<br /> no conforto da sua casa</BannerText>
     <Logo src={logo} alt="efood logo" />
   </BannerContainer>
 );

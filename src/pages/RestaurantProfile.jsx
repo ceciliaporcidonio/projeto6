@@ -1,5 +1,9 @@
+
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
+import { addItemToCart } from '../store/cartSlice';
+import CartModal from '../components/CartModal/CartModal';
 import {
   ProfileBanner,
   Overlay,
@@ -134,7 +138,7 @@ const restaurantData = {
     3: {
       name: 'Hamburgão da Esquina',
       image: burgerImage,
-      cuisine: 'Americana',
+      cuisine: 'Hambúrguer',
       menu: [
         {
           name: 'Cheeseburger Clássico',
@@ -234,7 +238,7 @@ const restaurantData = {
     5: {
       name: 'Pizzaria Forno Mágico',
       image: pizzaImage,
-      cuisine: 'Italiana',
+      cuisine: 'Pizza',
       menu: [
         {
           name: 'Pizza Margherita',
@@ -332,74 +336,95 @@ const restaurantData = {
       ]
     },  };
 
-const RestaurantProfile = () => {
-  const { id } = useParams();
-  const restaurant = restaurantData[id];
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedDish, setSelectedDish] = useState(null);
 
-  const openModal = (dish) => {
-    setSelectedDish(dish);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedDish(null);
-  };
-
-  if (!restaurant) {
-    return <div>Restaurante não encontrado</div>;
-  }
-
-  return (
-    <ProfileContainer>
-      <HeaderContainer>
-        <HeaderLink href="/">Restaurantes</HeaderLink>
-        <Link to="/">
-          <Logo src={logo} alt="Logo" />
-        </Link>
-        <CartInfo>0 produto(s) no carrinho</CartInfo>
-      </HeaderContainer>
-      <ProfileBanner>
-        <img src={restaurant.image} alt={restaurant.name} />
-        <div className="overlay"></div>
-        <CuisineType>{restaurant.cuisine}</CuisineType>
-        <RestaurantName>{restaurant.name}</RestaurantName>
-      </ProfileBanner>
-      
-      <Menu>
-        {restaurant.menu.map((item, index) => (
-          <MenuItem key={index}>
-            <img src={item.image} alt={item.name} />
-            <div>
-              <h3>{item.name}</h3>
-              <p>{item.description}</p>
-              <span>{item.price}</span>
-              <span> - Serve {item.serve} pessoa(s)</span>
-              <button onClick={() => openModal(item)}>Comprar</button> {/* Abre o modal com o item selecionado */}
-            </div>
-          </MenuItem>
-        ))}
-      </Menu>
-
-      {/* Modal */}
-      {isModalOpen && (
-        <Overlay isVisible={isModalOpen} onClick={closeModal}>
-          <ModalContainer onClick={(e) => e.stopPropagation()}>
-            <CloseButton onClick={closeModal}>×</CloseButton>
-            <DishImage src={selectedDish.image} alt={selectedDish.name} />
-            <TextContainer>
-              <Title>{selectedDish.name}</Title>
-              <Description>{selectedDish.description}</Description>
-              <span> - Serve {selectedDish.serve} pessoa(s)</span>
-              <ActionButton>Adicionar ao Carrinho - {selectedDish.price}</ActionButton>
-              </TextContainer>
-          </ModalContainer>
-        </Overlay>
-      )}
-    </ProfileContainer>
-  );
-};
-
-export default RestaurantProfile;
+    const RestaurantProfile = () => {
+      const { id } = useParams();
+      const restaurant = restaurantData[id];
+      const [isModalOpen, setIsModalOpen] = useState(false);
+      const [selectedDish, setSelectedDish] = useState(null);
+      const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+      const dispatch = useDispatch();
+      const cartItemsCount = useSelector((state) => state.cart.items.length);
+    
+      const openModal = (dish) => {
+        setSelectedDish(dish);
+        setIsModalOpen(true);
+      };
+    
+      const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedDish(null);
+      };
+    
+      const addToCart = (dish) => {
+        dispatch(addItemToCart({
+          name: dish.name,
+          price: dish.price,
+          image: dish.image,
+        }));
+        setIsModalOpen(false); // Fecha o modal do prato
+        setIsCartModalOpen(true); // Abre o modal do carrinho
+      };
+    
+      if (!restaurant) {
+        return <div>Restaurante não encontrado</div>;
+      }
+    
+      return (
+        <ProfileContainer>
+          <HeaderContainer>
+            <HeaderLink href="/">Restaurantes</HeaderLink>
+            <Link to="/">
+              <Logo src={logo} alt="Logo" />
+            </Link>
+            <CartInfo onClick={() => setIsCartModalOpen(true)}>
+              {cartItemsCount} produto(s) no carrinho
+            </CartInfo>
+          </HeaderContainer>
+          <ProfileBanner>
+            <img src={restaurant.image} alt={restaurant.name} />
+            <div className="overlay"></div>
+            <CuisineType>{restaurant.cuisine}</CuisineType>
+            <RestaurantName>{restaurant.name}</RestaurantName>
+          </ProfileBanner>
+          
+          <Menu>
+            {restaurant.menu.map((item, index) => (
+              <MenuItem key={index}>
+                <img src={item.image} alt={item.name} />
+                <div>
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                  <button onClick={() => openModal(item)}>Adicionar ao carrinho</button>
+                </div>
+              </MenuItem>
+            ))}
+          </Menu>
+    
+          {/* Modal do prato */}
+          {isModalOpen && (
+            <Overlay isVisible={isModalOpen} onClick={closeModal}>
+              <ModalContainer onClick={(e) => e.stopPropagation()}>
+                <CloseButton onClick={closeModal}>×</CloseButton>
+                <DishImage src={selectedDish.image} alt={selectedDish.name} />
+                <TextContainer>
+                  <Title>{selectedDish.name}</Title>
+                  <Description>{selectedDish.description}</Description>
+                  <span> - Serve {selectedDish.serve} pessoa(s)</span>
+                  <ActionButton onClick={() => addToCart(selectedDish)}>
+                    Adicionar ao Carrinho - {selectedDish.price}
+                  </ActionButton>
+                </TextContainer>
+              </ModalContainer>
+            </Overlay>
+          )}
+    
+          {/* Modal do Carrinho */}
+          {isCartModalOpen && (
+            <CartModal onClose={() => setIsCartModalOpen(false)} />
+          )}
+        </ProfileContainer>
+      );
+    };
+    
+    export default RestaurantProfile;
