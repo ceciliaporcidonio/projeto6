@@ -242,7 +242,7 @@ const restaurantData = {
       menu: [
         {
           name: 'Pizza Margherita',
-          description: 'Clássica pizza italiana com molho de tomate fresco, mussarela derretida e folhas de manjericão, celebrando simplicidade e sabor.',
+          description: 'A pizza Margherita é uma pizza clássica da culinária italiana, reconhecida por sua simplicidade e sabor inigualável. Ela é feita com uma base de massa fina e crocante, coberta com molho de tomate fresco, queijo mussarela de alta qualidade, manjericão fresco e azeite de oliva extra-virgem. A combinação de sabores é perfeita, com o molho de tomate suculento e ligeiramente ácido, o queijo derretido e cremoso e as folhas de manjericão frescas, que adicionam um toque de sabor herbáceo. É uma pizza simples, mas deliciosa, que agrada a todos os paladares e é uma ótima opção para qualquer ocasião.',
           price: 'R$ 41,00',
           image: pizzaImage,
           serve: 3
@@ -410,9 +410,9 @@ const restaurantData = {
                 <TextContainer>
                   <Title>{selectedDish.name}</Title>
                   <Description>{selectedDish.description}</Description>
-                  <span> - Serve {selectedDish.serve} pessoa(s)</span>
+                  <span> Serve até {selectedDish.serve} pessoa(s)</span>
                   <ActionButton onClick={() => addToCart(selectedDish)}>
-                    Adicionar ao Carrinho - {selectedDish.price}
+                    Adicionar ao carrinho - {selectedDish.price}
                   </ActionButton>
                 </TextContainer>
               </ModalContainer>

@@ -232,8 +232,8 @@ export const Overlay = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-width: 1000px;
-  height: 280px;
+width: 1024px;
+  height: 344px;
   background: #E66767;
   display: flex;
   padding: 30px;
@@ -244,25 +244,30 @@ width: 1000px;
 
 // Título do prato no modal
 export const Title = styled.h2`
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
-  color: #FFEBD9;
+  color: #FFFFFF;
   margin: 0;
   font-family: 'roboto', sans-serif;
+  line-height: 21,09px;
+    margin-bottom: 20px;
+
 `;
 
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  color: #FFEBD9;
-  line-height: 22px;
+  color: #FFffff;
   width: 100%;
-  
+  margin-bottom: 20px;
+
 
 
       span {
       font-size: 14px;
+        margin-bottom: 20px;
+
       color: #FFFFFF;
       font-family: 'roboto', sans-serif;
       align-self: flex-start; /* Alinhamento ao início */
@@ -272,10 +277,10 @@ export const TextContainer = styled.div`
 // Descrição do prato
 export const Description = styled.p`
   font-size: 14px;
-  color: #FFEBD9;
+  color: #FFffff;
   line-height: 22px;
   font-family: 'roboto', sans-serif;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   display: block;
 
 
@@ -283,16 +288,16 @@ export const Description = styled.p`
 
 // Imagem do prato
 export const DishImage = styled.img`
-  width: 304px;
-  height: 167px;
+  width: 280px;
+  height: 280px;
   object-fit: cover;
   `;
 
 // Botão de fechar
 export const CloseButton = styled.button`
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 16px;
+  right: 16px;
   background: none;
   border: none;
   cursor: pointer;
@@ -302,20 +307,22 @@ export const CloseButton = styled.button`
 
 // Botão "Adicionar ao Carrinho"
 export const ActionButton = styled.button`
-  width: 380px;
-  height: 40px;
+  width: 230px;
+  height: 24px;
   background: #FFEBD9;
-  border: none;
+  border: 2px solid #E66767; 
   color: #E66767;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
-  font-size: 22px;
-  border-radius: 5px;
+  font-size: 14px;
+  line-height: 16,41px;
+  margin-bottom: 30px;
 
+  
   &:hover {
     background-color: #fff8e3;
   }
