@@ -65,7 +65,6 @@ const CartModal = ({ onClose }) => {
       case "CART":
         return (
           <>
-            <h2>Carrinho</h2>
             <CartItems>
               {cart.items.map((item) => (
                 <CartItem key={item.id}>
@@ -80,7 +79,10 @@ const CartModal = ({ onClose }) => {
                 </CartItem>
               ))}
             </CartItems>
-            <Total>Total: R$ {cart.totalAmount.toFixed(2)}</Total>
+            <Total>
+  <span>Valor total</span>
+  <span>R$ {cart.totalAmount.toFixed(2)}</span> {/* Exibe o valor do total formatado */}
+</Total>
             <ActionButton onClick={() => setStep("DELIVERY")}>Continuar com a entrega</ActionButton>
           </>
         );
