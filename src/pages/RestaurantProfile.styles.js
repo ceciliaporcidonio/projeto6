@@ -6,11 +6,11 @@ export const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1624px
+  height: 1324px;
   overflow: hidden;
   background-color: #FFF8F2;
   width: 100%;
-  max-width: 1366px;
+  max-width: 1920px;
   margin: auto;
 `;
 
@@ -19,13 +19,18 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 171px;
+  padding: 0 17%; 
   background-image: url(${bannerImage});
   background-size: cover;
   background-position: center;
   background-color: #fff8f2;
   color: #fff;
   height: 186px;
+
+   @media (max-width: 1080px) {
+    padding: 0 4vw; /* Ajusta o padding em telas menores */
+    font-size: 24px; /* Diminui o tamanho da fonte em telas menores */
+  }
 `;
 
 export const HeaderLink = styled.a`
@@ -75,7 +80,7 @@ export const ProfileBanner = styled.div`
     top: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2); /* Camada escura e transparente */
+    background: rgba(0, 0, 0, 0.5); /* Camada escura e transparente */
   }
 
   & > div {
@@ -87,8 +92,7 @@ export const ProfileBanner = styled.div`
 export const CuisineType = styled.h2`
   position: absolute;
   top: 30px;
-  left: 171px;
-  padding: 0px;
+  padding: 0 17%; 
   font-size: 32px;
   line-height: 37,5px
   color: #ffffff;
@@ -96,18 +100,30 @@ export const CuisineType = styled.h2`
   font-family: 'roboto', sans-serif;
   z-index: 2; /* Certifique-se de que o z-index é maior que a camada de transparência */
   text-align: left;
+
+  /* Media Query para telas menores */
+  @media (max-width: 1080px) {
+    padding: 0 4vw; /* Ajusta o padding em telas menores */
+    font-size: 24px; /* Diminui o tamanho da fonte em telas menores */
+  }
 `;
 
 export const RestaurantName = styled.h1`
   position: absolute;
   bottom: 20px;
-  left: 171px;
-  padding: 10px;
+  padding: 0 17%; 
   font-size: 32px;
   color: #fff;
   font-weight: 900;
   font-family: 'roboto', sans-serif;
   z-index: 2; /* Certifique-se de que o z-index é maior que a camada de transparência */
+
+
+  /* Media Query para telas menores */
+  @media (max-width: 1080px) {
+    padding: 0 4vw; /* Ajusta o padding em telas menores */
+    font-size: 24px; /* Diminui o tamanho da fonte em telas menores */
+  }
 `;
 
 export const RestaurantInfo = styled.div`
@@ -306,7 +322,7 @@ export const CloseButton = styled.button`
 `;
 
 // Botão "Adicionar ao Carrinho"
-export const ActionButton = styled.button`
+export const PrimaryActionButton = styled.button`
   width: 230px;
   height: 24px;
   background: #FFEBD9;

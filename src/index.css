@@ -38,3 +38,13 @@ body, html {
     max-width: 1600px; /* Expande o máximo conforme o desejado */
   }
 }
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 10vw;
+  }
+  .cuisine-type {
+    padding: 0 10vw;
+    font-size: 24px;
+  }
+}

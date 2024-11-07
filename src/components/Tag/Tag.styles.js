@@ -8,5 +8,5 @@ export const TagContainer = styled.span`
   font-size: 12px;
   font-family: 'Roboto', sans-serif; 
   height: 26px;
-  line-height: 25px;
+  line-height: 20px;
 `;

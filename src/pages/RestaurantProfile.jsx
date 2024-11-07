@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
@@ -12,7 +11,7 @@ import {
   Description,
   DishImage,
   CloseButton,
-  ActionButton,
+  PrimaryActionButton,
   TextContainer,
   ProfileContainer,
   RestaurantName,
@@ -23,7 +22,6 @@ import {
   CartInfo,
   CuisineType,
   Logo
-  
 } from './RestaurantProfile.styles';
 import logo from '../images/logo.png';
 import sushiImage from '../images/image1.png';
@@ -411,9 +409,9 @@ const restaurantData = {
                   <Title>{selectedDish.name}</Title>
                   <Description>{selectedDish.description}</Description>
                   <span> Serve até {selectedDish.serve} pessoa(s)</span>
-                  <ActionButton onClick={() => addToCart(selectedDish)}>
+                  <PrimaryActionButton onClick={() => addToCart(selectedDish)}>
                     Adicionar ao carrinho - {selectedDish.price}
-                  </ActionButton>
+                  </PrimaryActionButton>
                 </TextContainer>
               </ModalContainer>
             </Overlay>

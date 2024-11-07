@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
   width: 100%;
-  max-width: 1366px;
+  max-width: 1920px;
   height: 1848px;
   background-color: #FFF8F2;
   opacity: 1;

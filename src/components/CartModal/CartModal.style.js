@@ -100,89 +100,138 @@ export const Total = styled.div`
   padding: 0px 30px 0px 10px; /* Espaçamento interno opcional */
 `;
 
-export const ActionButton = styled.button`
-  width: 324px;
+export const PrimaryActionButton = styled.button`  width: 324px;
   height: 24px;
-  background: #ffe4e1;
+  background: #ffebd9;
   color: #e66767;
   font-size: 14px;
   font-weight: 700;
   border: none;
   cursor: pointer;
-  margin-top: 20px;
   line-height: 16,41px;
   align-items: center;
   margin-right: 200px;
   margin-left: 10px;
   `;
 
+  export const TitleContainer = styled.div`
+  padding: 0 10px;
+  font-size: 16px;
+  color: #ffebd9;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px; /* Espaço entre o título e o formulário */
+  text-align: justify;
+`;
+
+// src/components/CartModal/CartModalStyle.js
+
 export const DeliveryForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 700;
   color: #ffebd9;
+  line-height: 16,41px;
 
   label {
     font-weight: bold;
-    color:  #ffebd9;
+    color: #ffebd9;
+    margin-left: 10px;
+    margin-bottom: -8px;
   }
 
   input {
-    padding: 8px;
     border: 1px solid #e66767;
-    border-radius: 4px;
-    font-size: 16px;
-     background-color: #FFEBD9; /* Cor de fundo dos campos */
+    background-color: #FFEBD9;
+    width: flex;
+    height: 32px;
+    margin-left: 10px;
+    padding: 4px 8px;
+    margin-right: 20px;
   }
+`;
+
+export const SecondaryActionButton = styled.button`
+  width: 324px;
+  height: 24px;
+  background: #ffebd9;
+  color: #e66767;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px 0 10px;
+  line-height: 16px;
+  text-align: center;
 `;
 
 export const PaymentForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  color: #ffe4e1;
+  font-size: 14px;
+  line-height: 16,41px;
+  color: #ffebd9;
 
   label {
     font-weight: bold;
+        margin-left: 10px;
   }
 
-  input {
-   padding: 8px;
+   input {
     border: 1px solid #e66767;
-    border-radius: 4px;
     font-size: 16px;
-    background-color: #FFEBD9; /* Cor de fundo dos campos */
+    background-color: #FFEBD9;
+    width: flex;
+    height: 32px;
+    margin-left: 10px;
+    margin-right: 25px;
   }
 `;
 
 export const OrderConfirmation = styled.div`
-  text-align: center;
-  color: #ffe4e1;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-
-  h2 {
-    color: #ffe4e1;
-    margin-bottom: 15px;
-  }
 
   p {
     margin-bottom: 10px;
-    font-size: 16px;
-    color: #ffe4e1;
-  }
+    font-size: 14px;
+    color: #ffebd9;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: justify;
+    margin-left: 10px;
+    margin-right: 25px;
+    padding: 5px;
+    }
 `;
 
 export const Row = styled.div`
   display: flex;
-  gap: 15px; /* Espaço entre os campos */
+  gap: 10px;
+  margin-right: 25px;
+    margin-bottom: 5px;
 `;
+
 
 export const HalfWidthInput = styled.input`
-  flex: 1;
+  width: 140px;
+  height: 32px;
 `;
 
+export const SmallInput = styled.input`
+  width: 82px;
+  height: 32px;
+`;
+
+export const MediumInput = styled.input`
+  width: 198px;
+  height: 32px;
+  `;
+
+  export const LargeInput = styled.input`
+  width: 324px;
+  height: 32px;
+`;

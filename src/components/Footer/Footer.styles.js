@@ -6,7 +6,7 @@ export const FooterContainer = styled.footer`
   padding: 10px;
   color: #E66767;
   width: 100%;
-  max-width: 1366px;
+  max-width: 1920px;
   height: 298px;
   margin: 0 auto;
   `;
