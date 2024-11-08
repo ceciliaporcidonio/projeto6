@@ -1,8 +1,9 @@
 // src/components/CartModal/CartModal.jsx
 
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { removeItemFromCart } from '../../store/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'; // Importar o useNavigate
+import { removeItemFromCart, clearCart } from '../../store/cartSlice';
 import trashIcon from '../../images/lixeira.png';
 import {
   Overlay,
@@ -28,6 +29,7 @@ import {
 
 const CartModal = ({ onClose }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Inicializar o navigate
   const cart = useSelector((state) => state.cart);
   const [step, setStep] = useState("CART");
   const [formData, setFormData] = useState({
@@ -58,13 +60,11 @@ const CartModal = ({ onClose }) => {
 
   const finalizarPedido = async () => {
     try {
-      // Mapeia os produtos do carrinho para o formato esperado
       const products = cart.items.map((item) => ({
         id: item.id,
         price: parseFloat(item.price.replace('R$', '').replace(',', '.'))
       }));
-  
-      // Monta a estrutura do body da requisição conforme a API espera
+
       const body = {
         products: products,
         delivery: {
@@ -89,28 +89,28 @@ const CartModal = ({ onClose }) => {
           }
         }
       };
-  
-      console.log("Dados enviados:", body); // Verifica os dados antes de enviar
-  
+
       const response = await fetch('https://fake-api-tau.vercel.app/api/efood/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-  
+
       if (!response.ok) {
         const errorData = await response.json();
-        console.error('Erro da API:', errorData); // Mostra detalhes do erro retornado pela API
+        console.error('Erro da API:', errorData);
         throw new Error(`Erro na resposta da API: ${response.status} - ${errorData.message || 'Detalhes desconhecidos'}`);
       }
-  
+
       const data = await response.json();
       console.log("Resposta da API:", data);
-  
+
       if (data.orderId) {
         setFormData({ ...formData, orderId: data.orderId });
-        console.log("Mudou para ORDER_CONFIRMED");
-        setStep("ORDER_CONFIRMED");
+        setStep("ORDER_CONFIRMED"); // Muda para a tela de pedido confirmado
+
+        // Limpar o carrinho
+        dispatch(clearCart());  // Despacha a ação para limpar o carrinho
       } else {
         console.warn("orderId não encontrado na resposta da API");
       }
@@ -247,7 +247,7 @@ const CartModal = ({ onClose }) => {
       <p>Gostaríamos de ressaltar que nossos entregadores não estão autorizados a realizar cobranças extras.</p>
       <p>Lembre-se da importância de higienizar as mãos após o recebimento do pedido, garantindo assim sua segurança e bem-estar durante a refeição.</p>
       <p>Esperamos que desfrute de uma deliciosa e agradável experiência gastronômica. Bom apetite!</p>
-      <SecondaryActionButton onClick={onClose}>Concluir</SecondaryActionButton>
+      <SecondaryActionButton onClick={() => navigate('/')}>Concluir</SecondaryActionButton>
     </OrderConfirmation>
   );
 
