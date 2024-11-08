@@ -19,7 +19,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 17%; 
+  padding: 0 23%; 
   background-image: url(${bannerImage});
   background-size: cover;
   background-position: center;
@@ -92,7 +92,7 @@ export const ProfileBanner = styled.div`
 export const CuisineType = styled.h2`
   position: absolute;
   top: 30px;
-  padding: 0 17%; 
+  padding: 0 23%; 
   font-size: 32px;
   line-height: 37,5px
   color: #ffffff;
@@ -111,7 +111,7 @@ export const CuisineType = styled.h2`
 export const RestaurantName = styled.h1`
   position: absolute;
   bottom: 20px;
-  padding: 0 17%; 
+  padding: 0 23%; 
   font-size: 32px;
   color: #fff;
   font-weight: 900;
